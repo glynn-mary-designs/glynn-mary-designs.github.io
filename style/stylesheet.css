@@ -1,6 +1,12 @@
 body {
   margin: 0;
   background-image: linear-gradient(to bottom, #C3D1FF, #2D4DB9);
+  background-attachment: fixed;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .logo {
@@ -16,6 +22,86 @@ body {
   font-family: "cy", sans-serif;
   font-weight: 700;
   font-style: normal;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  padding-right: 20px;
+}
+
+.hamburger-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+}
+
+.hamburger-menu span {
+  width: 25px;
+  height: 3px;
+  background-color: #032476;
+  border-radius: 2px;
+}
+
+.float-right {
+  margin-left: auto;
+}
+
+.side-menu {
+  position: fixed;
+  right: -300px;
+  top: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: rgba(3, 36, 118, 0.95);
+  transition: right 0.3s ease;
+  z-index: 200;
+  overflow-y: auto;
+  padding-top: 60px;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.close-menu {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 32px;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-list a {
+  display: block;
+  padding: 20px;
+  color: white;
+  text-decoration: none;
+  font-family: "cy", sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  transition: background-color 0.3s ease;
+}
+
+.menu-list a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
 .cy {
@@ -28,10 +114,10 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
-  gap: 8px;
-  padding: 10px;
+  gap: 40px;
+  padding: 30px;
   position: relative;
-  height: 85vh;
+  height: 80vh;
 }
 
 .window {
@@ -96,7 +182,44 @@ body {
   text-align: center;
 }
 
-@media (min-width: 769px) and (max-width: 1200px) {
+.featured-work-section {
+  background-color: blue;
+  width: 100%;
+  height: 80vh;
+  opacity: 0.5;
+}
+
+.featured-work-heading {
+  color: white;
+  text-align: center;
+  padding-top: 5vh;
+  font-size: 3em;
+}
+
+.featured-work-grid {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.featured-work-image {
+  width: 200px;
+  height: auto;
+  border-radius: 10px;
+}
+
+.wiggle {
+  animation: wiggle 0.5s ease-in-out;
+}
+
+@keyframes wiggle {
+  0%, 100% { transform: translateX(0); }
+  10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+  20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+/*@media (min-width: 769px) and (max-width: 1200px) {
   .top-drags {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: auto;
@@ -159,3 +282,4 @@ body {
     height: 100%;
   }
 }
+*/
