@@ -207,7 +207,7 @@ a {
 .featured-work-section {
   background-color: #032476;
   width: 100%;
-  height: 80vh;
+  min-height: 80vh;
 }
 
 .featured-work-heading {
@@ -234,7 +234,8 @@ a {
 
 .featured-work-image {
   width: 17vw;
-  height: auto;
+  height: 17vw;
+  object-fit: cover;
   border-radius: 10px;
   transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
@@ -290,6 +291,18 @@ a {
   .featured-work-grid {
     gap: 40px;
   }
+
+  .featured-work-image {
+    width: 25vw;
+    height: 25vw;
+  }
+}
+
+@media (max-width: 768px) {
+  .featured-work-image {
+    width: 40vw;
+    height: 40vw;
+  }
 }
 
 .wiggle {
@@ -300,6 +313,16 @@ a {
   0%, 100% { transform: translateX(0); }
   10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
   20%, 40%, 60%, 80% { transform: translateX(5px); }
+}
+
+.site-footer {
+  background-color: #032476;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  font-family: "cy", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
 }
 
 /*@media (min-width: 769px) and (max-width: 1200px) {
