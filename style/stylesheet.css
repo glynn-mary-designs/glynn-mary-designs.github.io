@@ -167,26 +167,47 @@ a {
   float: right;
 }
 
-.window-content img {
-  width: 100%;
-  height: auto;
-}
-
 .window-content {
   background-color: white;
   flex: 1;
   padding: 20px;
   margin-bottom: 15px;
   margin-inline: 15px;
-  overflow: auto;
+  overflow: hidden;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.window-content h1 {
+  width: 100%;
+  margin: 0;
+}
+
+.window-content a {
+  display: block;
+}
+
+.window-content img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.window.mini .window-content img {
+  max-width: 50%;
+  max-height: 50%;
 }
 
 .featured-work-section {
-  background-color: blue;
+  background-color: #032476;
   width: 100%;
   height: 80vh;
-  opacity: 0.5;
 }
 
 .featured-work-heading {
@@ -196,17 +217,79 @@ a {
   font-size: 3em;
 }
 
+.gallery-hero {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 60px 28px 20px;
+  text-align: center;
+}
+
 .featured-work-grid {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 20px;
+  gap: 60px;
   padding: 20px;
 }
 
 .featured-work-image {
-  width: 200px;
+  width: 17vw;
   height: auto;
   border-radius: 10px;
+  transition: transform 0.3s ease, opacity 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.featured-work-image:hover {
+  transform: translateY(-12px) scale(1.05);
+  opacity: 0.85;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.about-me {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px 80px;
+  color: white;
+}
+
+.about-me-grid {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-top: 24px;
+  flex-wrap: wrap;
+}
+
+.about-me-image {
+  width: 100%;
+  max-width: 440px;
+  border-radius: 18px;
+  object-fit: cover;
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.25);
+}
+
+.about-me-copy {
+  flex: 1 1 420px;
+  min-width: 280px;
+}
+
+.about-me-text {
+  background-color: rgba(255, 255, 255, 0.12);
+  padding: 28px;
+  border-radius: 18px;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+  .about-me-grid {
+    flex-direction: column;
+  }
+
+  .featured-work-grid {
+    gap: 40px;
+  }
 }
 
 .wiggle {
